@@ -1,0 +1,15 @@
+<%= form_for @user, url: login_path do |f| %>
+  <table>
+    <tr>
+      <td><%= f.label :login, "Введите логин:" %></td>
+      <td><%= f.text_field :login, size: 20 %> <!-- поле для ввода логина -->
+    </tr>
+    <tr>
+      <td><%= f.label :password, 'Введите пароль:' %></td>
+      <td><%= f.password_field :password, size: 20 %> </td> <!-- поле для ввода пароля -->
+    </tr>
+    <tr>
+      <td COLSPAN="2"><%= f.submit 'Войти' %></td> <!-- кнопка -->
+    </tr>
+  </table>
+<% end %>

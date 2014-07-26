@@ -1,0 +1,36 @@
+<%= form_for @receipt do |f| %>
+
+  <table class='form_table'>
+    <tr>
+      <td><%= f.label "№ ОВКС:" %></td>
+      <td><%= f.text_field :ovks_num %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Дата передачи:" %></td>
+      <td><%= f.date_select :date, include_blank: true %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Получатель:" %></td>
+      <td><%= f.collection_select :employee_id, [Employee.new, *@employees], :id, :fio %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Передал:" %></td>
+      <td><%= f.collection_select :user_id, [User.new, *@users], :id, :fio %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Примечание:" %></td>
+      <td><%= f.text_area :note %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Скан:" %></td>
+      <td><%= f.file_field :scan %></td>
+    </tr>
+    <tr>
+      <% @ids.each do |id| %>
+        <%= f.hidden_field :ids, multiple: true, value: id %>
+      <% end %>
+      <td colspan=2><%= f.submit 'Сохранить' %></td>
+    </tr>
+  </table>
+
+<% end %>

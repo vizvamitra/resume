@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ovks</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  <meta charset='utf-8'>
+</head>
+<body>
+
+<div id='top'>
+  <div id='header'>
+    <a href="http://www.portal.nic.etu/" target= "_blank"><img src="/images/logo.gif"></a> 
+
+    <div id='header_info'>
+      <p>Вы вошли как: <%= fio %></p>
+      <p>Сегодня: <%= current_date %></p>
+    </div>
+
+  </div>
+
+  <ul id='top_menu'>
+    <li><%= link_to 'Счета', bills_path %></li>
+    <li><%= link_to 'Наряд-заказы', nzs_path %></li>
+    <li><%= link_to 'Служебки', szs_path %></li>
+    <li><%= link_to 'Расписки', receipts_path %></li>
+    <li>
+      <%= link_to 'Меню ↓', '#' %>
+      <ul>
+        <li><%= link_to 'Поставщики', vendors_path %></li>
+        <li><%= link_to 'Типы оборудования', types_path %></li>
+        <li><%= link_to 'Сотрудники', employees_path %></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+
+<div id='main'>
+  <%= yield %>
+  <div class='padding_fix'></div>
+</div>
+
+<div id='footer'>
+  <div id='contacts'>E-mail администратора: ekaterina.sasaeva@nicetu.spb.ru</div>
+  <div id='search'>
+  
+    <form action='/search'>
+      <input type='text' name='query' placeholder='Поиск...'/>
+      <input type='submit' value='' class='icon_24 search_24 search_button'/>
+    </form>
+    
+  </div>
+  <div id='controls'></div>
+</div>
+
+</body>
+</html>

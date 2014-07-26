@@ -1,0 +1,27 @@
+<div id="notice"><%= notice %></div>
+<h1><%= @group['title'] %></h1><br/>
+
+<table id='group_info'>
+	<thead>
+		<tr>
+			<th>Год создания</th>
+			<th>Страна</th>
+			<th>Место в хит-параде</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><%= @group['formation_year'] %></td>
+			<td><%= @group['country'] %></td>
+			<td><%= @group['top_position'] %></td>
+		</tr>
+	</tbody>
+</table><br/>
+
+<div class='controls'>
+	<%= link_to 'Изменить', edit_group_path(@group) %> |
+	<%= link_to 'Состав', group_members_path(@group['id'])%> | 
+	<%= link_to 'Песни', group_songs_path(@group['id'])%> | 
+	<%= link_to 'Гастроли', group_tours_path(@group['id'])%> | 
+	<%= link_to 'Назад', groups_path %>
+</div>

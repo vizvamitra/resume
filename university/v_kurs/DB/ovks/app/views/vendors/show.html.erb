@@ -1,0 +1,24 @@
+<h3>Данные поставщика</h3>
+
+<p>
+  <strong>Наименование:</strong>
+  <%= @vendor.title %>
+</p>
+
+<p>
+  <strong>Адрес:</strong>
+  <%= @vendor.address %>
+</p>
+
+<p>
+  <strong>Телефон:</strong>
+  <%= @vendor.phone %>
+</p>
+
+<p>
+  <strong>Дополнительно:</strong>
+  <%= @vendor.note %>
+</p>
+
+<%= link_to 'Редактировать', edit_vendor_path(@vendor) %> |
+<%= link_to 'Назад', vendors_path %>

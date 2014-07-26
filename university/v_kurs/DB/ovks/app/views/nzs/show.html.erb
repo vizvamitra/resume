@@ -1,0 +1,103 @@
+<div class='page_title'>
+  <h3>Наряд-заказ № <%= @nz.ovks_num %></h3>
+  <%= link_to '', edit_nz_path(@nz), class: 'icon_24 edit_24' %>
+</div>
+
+<div class='info'>
+  <div class='item_info'>
+    <table>
+      <tr>
+        <th>Дата заявки</th>
+        <td><%= date(@nz.date) %></td>
+      </tr>
+      <tr>
+        <th>№ договора</th>
+        <td><%= @nz.contract_num %></td>
+      </tr>
+      <tr>
+        <th>Шифр</th>
+        <td><%= @nz.code %></td>
+      </tr>
+      <tr>
+        <th>В/Ч</th>
+        <td><%= @nz.destination %></td>
+      </tr>
+      <tr>
+        <th>Наименование АПК</th>
+        <td><%= @nz.apk_name %></td>
+      </tr>
+      <tr>
+        <th>Децим. номер</th>
+        <td><%= @nz.decimal_num %></td>
+      </tr>
+      <tr>
+        <th>Зав. номер</th>
+        <td><%= @nz.zav_num %></td>
+      </tr>
+      <tr>
+        <th>Срок</th>
+        <td><%= date(@nz.buy_till) %></td>
+      </tr>
+      <tr>
+        <th>Отв. исполнитель</th>
+        <td><%= first_name(@nz.manager.fio)  if @nz.manager_id  %></td>
+      </tr>
+      <tr>
+        <th>СП и СИ</th>
+        <td><%= @nz.sp_si %></td>
+      </tr>
+      <tr>
+        <th>Получил</th>
+        <td><%= first_name(@nz.given_to.fio)  if @nz.given_to_id  %></td>
+      </tr>
+      <tr>
+        <th>Примечание</th>
+        <td><%= @nz.note %></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class='scan'>
+    <% if @nz.scan %>
+      <iframe src='<%= @nz.scan %>'></iframe>
+      <%= link_to 'Увеличить', @nz.scan %>
+    <% else %>
+      <p>Скан не загружен</p>
+    <% end %>
+  </div>
+
+</div>
+
+<div class='clear_fix'></div>
+
+<div class='nz_positions'>
+  <table class='major_table'>
+
+    <thead>
+      <tr>
+        <th>Тип техники</th>
+        <th>Название</th>
+        <th>Подробно</th>
+        <th>Отработка</th>         
+        <th colspan='2'></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @nz.items.each do |item| %>
+        <tr>
+          <td><%= item.type.name %></td>
+          <td><pre><%= item.name %></pre></td>
+          <td><pre><%= item.info %></pre></td>
+          <td><pre><%= item.done_info %></pre></td>
+          <td><%= link_to '', edit_item_path(item), class: 'icon_24 edit_24' %></td>
+          <td><%= link_to '', item, method: :delete, data:{confirm: "Вы уверены?"}, class: 'icon_24 delete_24' %></td>
+        </tr>
+      <% end %>
+      <%= render 'item_form', nz: @nz %>
+    </tbody> 
+
+  </table>    
+</div>
+
+<%= link_to 'Назад', nzs_path %>

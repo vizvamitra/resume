@@ -1,0 +1,45 @@
+<h3>Наряд-заказы</h3>
+
+<%= link_to 'Добавить наряд-заказ', new_nz_path %>
+
+<div class='clear_fix'></div>
+
+<div class='table_background'>
+  <table class='major_table fixed_header'>
+
+    <thead>
+      <tr>
+        <th>№ ОВКС</th>
+        <th>Скан</th>
+        <th>Дата заявки</th>
+        <th>№ договора</th>
+        <th>Шифр</th>
+        <th>ВЧ</th>
+        <th>Наименование АПК</th>
+        <th>Децим. номер</th>
+        <th>Зав. номер</th>
+        <th>Тип</th>
+        <th>Название</th>
+        <th>Подробно</th>
+        <th>Кол-во</th>
+        <th>Срок</th>
+        <th>Отв. исполнитель</th>
+        <th>СП и СИ</th>
+        <th>Получил</th>
+        <th>Примечание</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @nzs.each do |nz| %>
+        <%= render nz %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class='clear_fix'></div>
+
+<%= link_to 'Добавить наряд-заказ', new_nz_path %>

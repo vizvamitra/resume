@@ -1,0 +1,26 @@
+@media print {
+  #top{display: none;}
+  #footer {display:none;}
+  #buffer_top{display:none;}
+  #buffer_bottom{display:none;}
+
+  #main{width:auto;padding:0}
+
+  .a4_vertical{
+    box-shadow:none !important;
+    border:0 !important;
+    margin:0 auto !important;
+    padding: 0 !important;
+    min-height: inherit !important;
+  }
+
+  table {
+    border:solid #000 !important;
+    border-width:1px 0 0 1px !important;
+
+    th, td {
+      border:solid #000 !important;
+      border-width:0 1px 1px 0 !important;
+    }
+  }
+}

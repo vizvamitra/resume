@@ -1,0 +1,8 @@
+<h1><%= @group.title %></h1>
+<h2>Добавление нового концертного тура</h2><br/>
+
+<%= render 'new_form' %>
+
+<div class='controls'>
+	<%= link_to 'Назад', group_tours_path(@tour.group_id) %>
+</div>

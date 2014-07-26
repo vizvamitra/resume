@@ -1,0 +1,13 @@
+$('#form_model').val('')
+$('#form_count').val('')
+$('#form_sn').val('')
+
+$('#bill_pos_form').before("\
+  <tr>\
+    <td><%= @bill_pos.type.name %></td>\
+    <td><%= @bill_pos.model %></td>\
+    <td><%= @bill_pos.count %></td>\
+    <td><%= @bill_pos.sn %></td>\
+    <td><%= escape_javascript link_to '', edit_bill_bill_position_path(@bill_pos.bill_id, @bill_pos), class: 'icon_24 edit_24' %></td>\
+    <td><%= escape_javascript link_to '', bill_bill_position_path(@bill_pos.bill_id, @bill_pos), class: 'icon_24 delete_24', method: :delete, data: {confirm: 'Вы уверены?'} %></td>\
+  </tr>")

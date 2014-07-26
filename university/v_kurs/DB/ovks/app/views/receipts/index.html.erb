@@ -1,0 +1,33 @@
+<h3>Расписки</h3>
+
+<div class='clear_fix'></div>
+
+<div class='table_background'>
+  <table class='major_table fixed_header'>
+
+    <thead>
+      <tr>
+        <th class='<%= @sort['ovks_num'] %>'><%= link_to '№ ОВКС', receipts_path(order: 'ovks_num') %></th>
+        <th class='<%= @sort['scan'] %>'><%= link_to 'Скан', receipts_path(order: 'scan') %></th>
+        <th class='<%= @sort['date'] %>'><%= link_to 'Дата', receipts_path(order: 'date') %></th>
+        <th>Тип</th>
+        <th>Модель</th>
+        <th>Кол-во</th>
+        <th>S/N</th>
+        <th class='<%= @sort['employee_id'] %>'><%= link_to 'Получатель', receipts_path(order: 'employee_id') %></th>
+        <th class='<%= @sort['user_id'] %>'><%= link_to 'Передал', receipts_path(order: 'user_id') %></th>
+        <th>Примечание</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @receipts.each do |receipt| %>
+        <%= render receipt %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class='clear_fix'></div>

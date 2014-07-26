@@ -1,0 +1,40 @@
+<%= form_for(@tour) do |f| %>
+  <% if @tour.errors.any? || @concert.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tour.errors.count+@concert.errors.count, "error") %> prohibited this tour from being saved:</h2>
+
+      <ul>
+      <% @tour.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      <% @concert.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Название" %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :group_id, value: @tour.group_id %>
+  </div>
+  <h3>Первый концерт:</h3><br/>
+  <div class="field">
+    <%= f.label "Страна" %><br>
+    <%= text_field :concert, :country %>
+  </div><div class="field">
+    <%= f.label "Город" %><br>
+    <%= text_field :concert, :city %>
+  </div>
+  <div class="field">
+    <%= f.label "Дата" %><br>
+    <%= date_select :concert, :date %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Сохранить" %>
+  </div>
+<% end %>

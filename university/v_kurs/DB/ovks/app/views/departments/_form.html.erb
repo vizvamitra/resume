@@ -1,0 +1,30 @@
+<%= form_for(@department) do |f| %>
+
+  <% if @department.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@department.errors.count, "error") %> prohibited this department from being saved:</h2>
+
+      <ul>
+      <% @department.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table class='form_table'>
+    <tr>
+      <td><%= f.label :title, 'Название' %></td>
+      <td><%= f.text_field :title %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :employee_id, 'Начальник' %></td>
+      <td><%= f.collection_select :employee_id, @employees, :id, :fio, include_blank: true %></td>
+    </tr>
+    
+    <tr>
+      <td colspan=2><%= f.submit 'Сохранить' %></td>
+    </tr>
+  </table>
+
+<% end %>

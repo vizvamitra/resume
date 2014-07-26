@@ -1,0 +1,132 @@
+<div id="search">
+	<h1>Поиск</h1>
+
+	<%= render 'form' %>
+</div>
+
+<% if @results %>
+	<h3>Результаты поиска по запросу "<%= @results[:query] %>":</h3><br/>
+
+	<% if @results[:groups].count != 0 %>
+		<table>
+		<thead>
+			<tr><th colspan='4'>Группы</th></tr>
+			<tr>
+				<th>Название</th>
+				<th>Год создания</th>
+				<th>Страна</th>
+				<th>Хит-парад</th>
+			</tr>
+		</thead>
+		<tbody>
+		<% @results[:groups].each do |group| %>
+			<tr>
+				<td><%=link_to group['title'], group_path(group['id'])%></td>
+				<td><%=group.formation_year%></td>
+				<td><%=group.country%></td>
+				<td><%=group.top_position%></td>
+			</tr>
+		<% end %>
+		</tbody>
+		</table><br/>
+	<% end %>
+
+	<% if @results[:members].count != 0 %>
+		<table>
+		<thead>
+			<tr><th colspan='4'>Участники групп</th></tr>
+			<tr>
+				<th>Участник</th>
+	      <th>Амплуа</th>
+	      <th>Возраст</th>
+	      <th>Группа</th>
+			</tr>
+		</thead>
+		<tbody>
+		<% @results[:members].each do |member| %>
+			<tr>
+				<td><%= member['name'] %></td>
+	      <td><%= member['role'] %></td>
+	      <td><%= Time.now.year - member['birth_date'].to_date.year %></td>
+	      <td><%= link_to member['g_title'], group_path(member['gid']) %></td>
+			</tr>
+		<% end %>
+		</tbody>
+		</table><br/>
+	<% end %>
+
+	<% if @results[:songs].count != 0 %>
+		<table>
+		<thead>
+			<tr><th colspan='4'>Песни</th></tr>
+			<tr>
+				<th>Название</th>
+	      <th>Композитор</th>
+	      <th>Автор текста</th>
+	      <th>Группа</th>
+			</tr>
+		</thead>
+		<tbody>
+		<% @results[:songs].each do |song| %>
+			<tr>
+				<td><%= song['title'] %></td>
+	      <td><%= song['music_by'] %></td>
+	      <td><%= song['lyrics_by'] %></td>
+	      <td><%= link_to song['g_title'], group_path(song['gid']) %></td>
+			</tr>
+		<% end %>
+		</tbody>
+		</table><br/>
+	<% end %>
+
+	<% if @results[:tours].count != 0 %>
+		<table>
+		<thead>
+			<tr><th colspan='4'>Концертные туры</th></tr>
+			<tr>
+				<th>Название</th>
+	      <th>Начало</th>
+	      <th>Окончание</th>
+	      <th>Группа</th>
+			</tr>
+		</thead>
+		<tbody>
+		<% @results[:tours].each do |tour| %>
+			<tr>
+				<td><%= link_to tour.title, group_tour_path(tour['gid'],tour['id']) %></td>
+	      <td><%= tour.begin_date.to_date.strftime('%d.%m.%Y') %></td>
+	      <td><%= tour.end_date.to_date.strftime('%d.%m.%Y') %></td>
+	      <td><%= link_to tour['g_title'], group_path(tour['gid']) %></td>
+			</tr>
+		<% end %>
+		</tbody>
+		</table><br/>
+	<% end %>
+
+	<% if @results[:concerts].count != 0 %>
+		<table>
+		<thead>
+			<tr><th colspan='5'>Концерты</th></tr>
+			<tr>
+				<th>Дата</th>
+				<th>Город</th>
+				<th>Страна</th>
+				<th>Тур</th>
+				<th>Группа</th>
+			</tr>
+		</thead>
+		<tbody>
+		<% @results[:concerts].each do |concert| %>
+			<tr>
+				<td><%= concert['date'].to_date.strftime('%d.%m.%Y') %></td>
+				<td><%= concert['city'] %></td>
+				<td><%= concert['country'] %></td>
+				<td><%= link_to concert['t_title'], group_tour_path(concert['gid'], concert['tid']) %></td>
+				<td><%= link_to concert['g_title'], group_path(concert['gid']) %></td>
+
+			</tr>
+		<% end %>
+		</tbody>
+		</table><br/>
+	<% end %>
+<% end %>

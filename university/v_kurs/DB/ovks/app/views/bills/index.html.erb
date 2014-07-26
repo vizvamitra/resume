@@ -1,0 +1,47 @@
+<h3>Счета</h3>
+
+<%= link_to 'Добавить счёт', new_bill_path %> |
+<%= link_to 'Создать расписку', '#', class: 'add_receipt' %> 
+
+<div class='clear_fix'></div>
+
+<div class='table_background'>
+  <table class='major_table fixed_header'>
+
+    <thead>
+      <tr>
+        <th class='<%= @sort['ovks_num'] %>'><%= link_to '№ ОВКС', bills_path(order: 'ovks_num') %></th>
+        <th class='<%= @sort['skan'] %>'><%= link_to 'Скан', bills_path(order: 'skan') %></th>
+        <th class='<%= @sort['bill_num'] %>'><%= link_to '№ Счёта', bills_path(order: 'bill_num') %></th>
+        <th class='<%= @sort['bill_date'] %>'><%= link_to 'Дата счёта', bills_path(order: 'bill_date') %></th>
+        <th class='<%= @sort['vendor_id'] %>'><%= link_to 'Поставщик', bills_path(order: 'vendor_id') %></th>
+        <th>Сумма</th>
+        <th class='<%= @sort['payment_date'] %>'><%= link_to 'Дата оплаты', bills_path(order: 'payment_date') %></th>
+        <th class='<%= @sort['closing_date'] %>'><%= link_to 'Дата закрытия', bills_path(order: 'closing_date') %></th>
+        <th class='<%= @sort['closing_skan'] %>'><%= link_to 'Документы', bills_path(order: 'closing_skan')%></th>
+        <th class='filter <%= @filter['type'] %>'>
+          <%= link_to 'Тип', '#' %>
+        </th>
+        <th>Модель</th>
+        <th>Кол-во</th>
+        <th>S/N</th>
+        <th>Основание</th>
+        <th>Расписка</th>
+        <th class='receipt_checkbox_container'></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @bills.each do |bill| %>
+        <%= render bill unless (@bps[bill.id].nil? && @hide_empty) %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class='clear_fix'></div>
+
+<%= link_to 'Добавить счёт', new_bill_path %> |
+<%= link_to 'Создать расписку', '#', class: 'add_receipt' %>

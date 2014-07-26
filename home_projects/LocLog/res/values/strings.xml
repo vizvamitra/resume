@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">LocLog</string>
+    <string name="action_settings">Settings</string>
+    <string name="greetings">LocLog - your location logger</string>
+    <string name="start">Start LocLog Service</string>
+    <string name="stop">Stop LocLog service</string>
+    <string name="email">Send logfile by email</string>
+    <string name="email_subject">LocLog log</string>
+    <string name="email_body">This email was sent automatically from LocLog application at</string>
+    <string name="log_file_name">loclog.csv</string>
+    <string name="delete_log">Delete log file</string>
+
+</resources>

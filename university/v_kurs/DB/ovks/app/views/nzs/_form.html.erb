@@ -1,0 +1,65 @@
+<%= form_for @nz do |f| %>
+
+  <table class='form_table'>
+    <tr>
+      <td><%= f.label "№ ОВКС:" %></td>
+      <td><%= f.text_field :ovks_num %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Дата заявки:" %></td>
+      <td><%= f.date_select :date %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "№ договора:" %></td>
+      <td><%= f.text_field :contract_num %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Шифр:" %></td>
+      <td><%= f.text_field :code %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :destination, "В/Ч:" %></td>
+      <td><%= f.text_field :destination %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "АПК:" %></td>
+      <td><%= f.text_field :apk_name %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :decimal_num, "Децим. номер:" %></td>
+      <td><%= f.text_field :decimal_num %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :zav_num, "Зав. номер:" %></td>
+      <td><%= f.text_field :zav_num %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Срок:" %></td>
+      <td><%= f.date_select :buy_till %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :manager_id, "Отв. исполнитель:" %></td>
+      <td><%= f.collection_select :manager_id, [Employee.new, *@employees], :id, :fio %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "СП и СИ:" %></td>
+      <td><%= f.text_field :sp_si %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Получил:" %></td>
+      <td><%= f.collection_select :given_to_id, [Employee.new, *@employees], :id, :fio %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Примечание:" %></td>
+      <td><%= f.text_area :note %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Скан:" %></td>
+      <td><%= f.file_field :scan %></td>
+    </tr>
+    <tr>
+      <td colspan=2><%= f.submit 'Сохранить' %></td>
+    </tr>
+  </table>
+
+<% end %>

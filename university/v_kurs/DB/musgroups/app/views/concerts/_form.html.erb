@@ -1,0 +1,32 @@
+<%= form_for(@concert) do |f| %>
+  <% if @concert.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@concert.errors.count, "error") %> prohibited this concert from being saved:</h2>
+
+      <ul>
+      <% @concert.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label 'Страна' %><br>
+    <%= f.text_field :country %>
+  </div>
+  <div class="field">
+    <%= f.label 'Город' %><br>
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label 'Дата' %><br>
+    <%= f.date_select :date, start_year: Time.now.year-100 %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :tour_id, value: @concert.tour_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Сохранить" %>
+  </div>
+<% end %>

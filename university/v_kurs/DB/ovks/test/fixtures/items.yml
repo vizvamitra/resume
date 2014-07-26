@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: 
+  info: MyString
+  done: false
+  done_info: MyString
+  type_id: 1
+  sz_id: 1
+  nz_id: 1
+
+two:
+  name: 
+  info: MyString
+  done: false
+  done_info: MyString
+  type_id: 1
+  sz_id: 1
+  nz_id: 1

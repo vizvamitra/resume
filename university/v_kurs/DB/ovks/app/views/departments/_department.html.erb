@@ -1,0 +1,13 @@
+<tr>
+  <td rowspan='<%= department.employees.count+1 %>'><%= link_to department.title, edit_department_path(department) %></td>
+  <% if department.employees.empty? %>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td colspan='2'></td>
+  <% end %>
+</tr>
+
+<% department.employees.each do |employee| %>
+  <%= render employee, department: department %>
+<% end %>

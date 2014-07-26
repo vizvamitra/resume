@@ -1,0 +1,33 @@
+table{
+	border-collapse:collapse;
+	margin:auto;
+	max-width:730px;
+	min-width:650px;
+
+	thead {
+		tr{
+			background-color:#ddd;
+		}
+		th{
+			padding:5px;
+		}
+	}
+
+	tbody{
+		text-align:center;
+
+		tr:nth-child(2n+1){
+			background-color:#f0f0f0;
+		}
+		tr:nth-child(2n){
+			background-color:#e8e8e8;
+		}
+		tr:hover{
+			background-color:#e0e0e0;
+		}
+
+		td{
+			padding:5px;
+		}
+	}
+}

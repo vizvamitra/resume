@@ -1,0 +1,9 @@
+<tr <%= "class=done" if receipt.employee_id %>>
+  <td rowspan='<%= receipt.rowspan %>'><%= link_to receipt.ovks_num, receipt %></td>
+  <td rowspan='<%= receipt.rowspan %>'><%= link_to '', receipt.scan, class: 'icon_24 scan_24' if receipt.scan %></td>
+  <td rowspan='<%= receipt.rowspan %>'><%= date(receipt.date) %></td>
+</tr>
+
+<% receipt.bill_positions.each do |bp| %>
+  <%= render 'receipt_item', item: bp, receipt: receipt %>
+<% end %>

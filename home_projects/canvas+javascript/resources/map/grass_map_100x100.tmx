@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="100" height="100" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="tileset_01" tilewidth="32" tileheight="32">
+  <image source="tilesets/tileset_01.png" width="352" height="32"/>
+ </tileset>
+ <tileset firstgid="12" name="land_grass_2" tilewidth="32" tileheight="32">
+  <image source="tilesets/land_grass_2.png" width="160" height="128"/>
+  <terraintypes>
+   <terrain name="grass" tile="-1"/>
+   <terrain name="land" tile="-1"/>
+  </terraintypes>
+  <tile id="0" terrain="1,1,1,0"/>
+  <tile id="1" terrain="1,1,0,0"/>
+  <tile id="2" terrain="1,1,0,1"/>
+  <tile id="3" terrain="0,0,0,1"/>
+  <tile id="4" terrain="0,0,1,0"/>
+  <tile id="5" terrain="1,0,1,0"/>
+  <tile id="6" terrain="0,0,0,0"/>
+  <tile id="7" terrain="0,1,0,1"/>
+  <tile id="8" terrain="0,1,0,0"/>
+  <tile id="9" terrain="1,0,0,0"/>
+  <tile id="10" terrain="1,0,1,1"/>
+  <tile id="11" terrain="0,0,1,1"/>
+  <tile id="12" terrain="0,1,1,1"/>
+  <tile id="13" terrain="1,1,1,1"/>
+ </tileset>
+ <layer name="Слой тайлов 1" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt2EFuwjAQBVAfoIUWSgv3v2izQUqtEI9D4hj1Ld4yWJrPeGyfUkonunIc/Mz4aLTe2uu8qvPgNuOz0Xprr/Oqns2j1F+5qzw2zaP0fZQ81s3jbfAecJBHkzyi9TQ/2uTxnWLnpa/0t0/ufXXpoBY9uNdnqkaROi39v9f21X+0pEbjPMeZymOfPJb+hjzitcxnQc09Wh7r59HivCWPsnwWTM2Fud4Z37/lsa3ae7g8tjXXO1Oi52R59EEefZHHdmrf3GvmPuU653eQZ97c5REXfZuqfXOvmfuU88jvIPaeffOw9/SVx6N9yd6zTx76YB+P7uT6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADI/QIUc8QN
+  </data>
+ </layer>
+ <layer name="woods" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt2EsOgzAMBUDOQe9/zy66qKpCsBMHgZiRuqkCEX6EfNZlWdbgr8JZ/dxV9Pkr8zijn7sazSM6tqLvvzzG2lXXTx75dq+O61uq73dnxse1VOdh/hgze3xs5dXTz1Nk8njt/J+5/944sf/4aH1LIt+Z3vc9O26eKDsX7LVp3bPVF78yNRmtszyOZfOIrJ/k0W9GTaL7SHn8m3HuanzMIY9r6TnHzayT5VGnIid5HIvWtKKW8jgW3XvL4xyRPKrOnORxbGRNVTXv87VVo60z3sh1jKveczAmM3/49swXXV9xDnMwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFf3BtfpGIA=
+  </data>
+ </layer>
+</map>

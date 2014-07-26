@@ -1,0 +1,48 @@
+<div id='receipt' class='a4_vertical'>
+  <h3>Расписка № <%= @receipt.ovks_num %></h3><br>
+
+  <p>Дана в том, что в отделе ВКС получена техника согласно приведённому списку:</p>
+
+  <table id='receipt_blank'>
+    <thead>
+      <tr>
+        <th>Тип</th>
+        <th>Модель</th>
+        <th>Кол-во</th>
+        <th>S/N</th>
+        <th>Счёт</th>
+        <th>Основание</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @receipt.bill_positions.each do |bp| %>
+        <tr>
+          <td><%= bp.type.name %></td>
+          <td><%= bp.model %></td>
+          <td><%= bp.count || 1 %></td>
+          <td><%= bp.sn %></td>
+          <td><%= bp.bill.bill_num %> от <%= date(bp.bill.bill_date) %></td>
+          <td><%= bp.reason.ovks_num if bp.has_reason? %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <p><%= @receipt.note %></p>
+
+  <br>
+
+  <div id='signatures'>
+    <p>«___» ________________________ <%= Time.now.year %> г.</p><br>
+    <p>Технику получил: ______________________________</p>
+    <p class='foot_note'>                      (отдел, подпись, расшифровка)</p>
+    <p>Технику передал: ______________________________ </p>
+    <p class='foot_note'>                     (подпись, расшифровка)</p>
+    <p>Согласовано: _____________ нач. отдела ВКС Варгасов А.С.</p>
+    <p>Согласовано: _____________ гл. бухгалтер Комбарова М.Ю.</p>
+  </div>
+  
+</div>

@@ -1,0 +1,34 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+html, body{
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  overflow:hidden;
+}
+
+#info{
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 14px;
+  display: none;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  padding: 10px;
+  background: rgba(255,255,255, 0.4);
+  border-radius: 10px;
+}
+
+#info ul{
+  list-style: none;
+}
+
+#info ul ul{
+  margin-left: 10px;
+}

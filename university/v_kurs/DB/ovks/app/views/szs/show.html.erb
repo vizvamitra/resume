@@ -1,0 +1,79 @@
+<div class='page_title'>
+  <h3>Служебная записка № <%= @sz.ovks_num %></h3>
+  <%= link_to '', edit_sz_path(@sz), class: 'icon_24 edit_24' %>
+</div>
+
+<div class='info'>
+  <div class='item_info'>
+    <table>
+      <tr>
+        <th>Дата регистрации</th>
+        <td><%= date(@sz.date) %></td>
+      </tr>
+      <tr>
+        <th>Тип</th>
+        <td><%= @sz.sz_type.name %></td>
+      </tr>
+      <tr>
+        <th>Сотрудник</th>
+        <td><%= @sz.employee.fio if @sz.employee_id %></td>
+      </tr>
+      <tr>
+        <th>Отдел</th>
+        <td><%= @sz.employee.department.title if @sz.employee_id %></td>
+      </tr>
+      <tr>
+        <th>Исполнтель</th>
+        <td><%= first_name(@sz.user.fio) if @sz.user_id %></td>
+      </tr>
+      <tr>
+        <th>Примечание</th>
+        <td><%= @sz.note %></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class='scan'>
+    <% if @sz.scan %>
+      <iframe src='<%= @sz.scan %>'></iframe>
+      <%= link_to 'Увеличить', @sz.scan %>
+    <% else %>
+      <p>Скан не загружен</p>
+    <% end %>
+  </div>
+
+</div>
+
+<div class='clear_fix'></div>
+
+<div class='sz_positions'>
+  <table class='major_table'>
+
+    <thead>
+      <tr>
+        <th>Тип техники</th>
+        <th>Название</th>
+        <th>Подробно</th>
+        <th>Отработка</th>         
+        <th colspan='2'></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @sz.items.each do |item| %>
+        <tr>
+          <td><%= item.type.name %></td>
+          <td><pre><%= item.name %></pre></td>
+          <td><pre><%= item.info %></pre></td>
+          <td><pre><%= item.done_info %></pre></td>
+          <td><%= link_to '', edit_item_path(item), class: 'icon_24 edit_24' %></td>
+          <td><%= link_to '', item, method: :delete, data:{confirm: "Вы уверены?"}, class: 'icon_24 delete_24' %></td>
+        </tr>
+      <% end %>
+      <%= render 'item_form', sz: @sz %>
+    </tbody> 
+
+  </table>    
+</div>
+
+<%= link_to 'Назад', szs_path %>

@@ -1,0 +1,38 @@
+<%= form_for(@employee) do |f| %>
+
+  <% if @employee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+
+      <ul>
+      <% @employee.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table class='form_table'>
+    <tr>
+      <td><%= f.label :fio, 'ФИО' %></td>
+      <td><%= f.text_field :fio %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :department_id, 'Отдел' %></td>
+      <td><%= f.collection_select :department_id, @departments, :id, :title, include_blank: true %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :post, "Должность:" %></td>
+      <td><%= f.text_field :post %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :phone, 'Телефон' %></td>
+      <td><%= f.text_field :phone %></td>
+    </tr>
+    
+    <tr>
+      <td colspan=2><%= f.submit 'Сохранить' %></td>
+    </tr>
+  </table>
+
+<% end %>

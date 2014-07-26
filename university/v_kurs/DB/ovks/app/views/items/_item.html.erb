@@ -1,0 +1,32 @@
+<tr <%= "class=done" if owner.is_a?(Nz) && owner.given_to_id %>>
+  <td><%= item.type.name %></td>
+  <td><%= item.name %></td>
+  <td class='caped_width'><%= item.info %></td>
+  <td><%= item.count %></td>
+
+  <% if owner.is_a? Sz %>
+
+    <td><%= item.done_count %></td>
+    <td class='caped_width'><%= item.done_info %></td>
+    <% if item == owner.grouped_items.first %>
+      <td rowspan='<%= owner.grouped_items.size %>'><%= first_name(owner.user.fio) %></td>
+
+      <td rowspan='<%= owner.grouped_items.size %>' class='caped_width'><%= owner.note %></td>
+      <td rowspan='<%= owner.grouped_items.size %>'><%= link_to '', edit_sz_path(owner), class: 'icon_24 edit_24' %></td>
+      <td rowspan='<%= owner.grouped_items.size %>'><%= link_to '', sz_path(owner), method: :delete, data:{confirm: "Вы уверены?"}, class: 'icon_24 delete_24' %></td>
+    <% end %>
+
+  <% else %>
+
+    <% if item == owner.grouped_items.first %>
+      <td rowspan='<%= owner.grouped_items.size %>'><%= date(owner.buy_till) %></td>
+      <td rowspan='<%= owner.grouped_items.size %>'><%= first_name(owner.manager.fio) if owner.manager_id  %></td>
+      <td rowspan='<%= owner.grouped_items.size %>'><%= owner.sp_si %></td>
+      <td rowspan='<%= owner.grouped_items.size %>'><%= first_name(owner.given_to.fio) if owner.given_to_id %></td>
+      <td rowspan='<%= owner.grouped_items.size %>' class='caped_width'><%= owner.note %></td>
+      <td rowspan='<%= owner.grouped_items.size %>'><%= link_to '', edit_nz_path(owner), class: 'icon_24 edit_24' %></td>
+      <td rowspan='<%= owner.grouped_items.size %>'><%= link_to '', nz_path(owner), method: :delete, data:{confirm: "Вы уверены?"}, class: 'icon_24 delete_24' %></td>
+    <% end %>
+
+  <% end %>
+</tr>

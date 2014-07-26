@@ -1,0 +1,16 @@
+<tr id='nz_item_form'>
+  
+    <td>
+      <%= collection_select(:item, :type_id, @types, :id, :name, {}, {id: 'form_type_id'}) %><br/>
+      <%= label_tag 'Кол-во: ' %>
+      <%= text_field_tag :count, nil, id: 'form_count', size: 2, maxlength: 2 %>
+    </td>
+    <td><%= text_area_tag :name ,nil, id:'form_name' %></td>
+    <td><%= text_area_tag :info, nil, id:'form_info' %></td>
+    <td><%= text_area_tag :done_info, nil, id: 'form_done_info' %></td>    
+    <td colspan='2'>
+      <%= hidden_field_tag :nz, nz.id, id: 'form_nz_id' %>
+      <%= link_to '', nil, class: 'icon_24 add_24', id: 'form_submit' %>
+    </td>
+  
+</tr>

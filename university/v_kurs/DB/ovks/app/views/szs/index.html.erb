@@ -1,0 +1,41 @@
+<h3>Служебные записки</h3>
+
+<%= link_to 'Добавить служебную записку', new_sz_path %>
+
+<div class='clear_fix'></div>
+
+<div class='table_background'>
+  <table class='major_table fixed_header'>
+
+    <thead>
+      <tr>
+        <th>№ ОВКС</th>
+        <th>Скан</th>
+        <th>Дата заявки</th>
+        <th>Тип</th>
+        <th>Сотрудник</th>
+        <th>Отдел</th>
+        <th>Тип</th>
+        <th>Название</th>
+        <th>Подробно</th>
+        <th>Кол-во</th>
+        <th>Отработано</th>
+        <th>Отработка</th>
+        <th>Исполнитель</th>
+        <th>Примечание</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @szs.each do |sz| %>
+        <%= render sz %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class='clear_fix'></div>
+
+<%= link_to 'Добавить служебную записку', new_sz_path %>

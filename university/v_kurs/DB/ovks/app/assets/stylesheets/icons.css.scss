@@ -1,0 +1,22 @@
+.icon_24{
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin: auto;
+  border: 0;
+  background: url('/images/icons_24_a.png');
+}
+
+.icon_36{
+  display: block;
+  width: 36px;
+  height: 36px;
+  margin: auto;
+  background: url('/images/icons_36_a.png')  no-repeat;
+}
+
+.skan_24{ background-position: 0px 0px; }
+.edit_24{ background-position: -24px 0px; }
+.add_24{ background-position: -48px 0px; }
+.search_24{ background-position: -120px 0px; }
+.delete_24{ background-position: -72px 0px; }

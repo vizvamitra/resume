@@ -1,0 +1,32 @@
+<%= form_for(@member) do |f| %>
+  <% if @member.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@member.errors.count, "error") %> prohibited this member from being saved:</h2>
+
+      <ul>
+      <% @member.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Имя" %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label "Амплуа" %><br>
+    <%= f.text_field :role %>
+  </div>
+  <div class="field">
+    <%= f.label "Дата рождения" %><br>
+    <%= f.date_select :birth_date, start_year: Time.now.year-100, end_year: Time.now.year %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :group_id, value: @member.group_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Сохранить" %>
+  </div>
+<% end %>

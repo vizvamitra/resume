@@ -1,0 +1,4 @@
+This text contains many different words and must be used only for testing my
+program. There is no sense in any other usage. It was rather difficult to write
+all of this, but I'm not afraid of difficulties. I hope you will like th text
+as well as I do.

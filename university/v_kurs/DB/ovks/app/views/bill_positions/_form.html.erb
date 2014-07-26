@@ -1,0 +1,35 @@
+<%= form_for [@bill, @bp] do |f| %>
+
+  <table class='form_table bp_form'>
+    <tr>
+      <td><%= f.label "Тип:" %></td>
+      <td><%= f.collection_select(:type_id, @types, :id, :name) %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Модель:" %></td>
+      <td><%= f.text_field :model %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Кол-во:" %></td>
+      <td><%= f.text_field :count %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "S/N:" %></td>
+      <td><%= f.text_area :sn, rows: 5 %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Основание:" %></td>
+      <td>
+        <%= f.radio_button :sz_or_nz, true, id:'bp_radio_sz' %>
+        <%= f.label :sz_or_nz_true, 'Служебка' %><br>
+        <%= f.radio_button :sz_or_nz, false, id:'bp_radio_nz' %>
+        <%= f.label :sz_or_nz_false, 'Наряд-заказ' %><br>
+        <%= f.collection_select @sz_or_nz, @szs_nzs, :id, :ovks_num, {include_blank: 'Не указано'}, {id: 'sz_nz_select'} %>
+      </td>
+    </tr>
+    <tr>
+      <td colspan=2><%= f.submit 'Сохранить' %></td>
+    </tr>
+  </table>
+
+<% end %>

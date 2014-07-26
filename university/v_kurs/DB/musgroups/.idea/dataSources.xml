@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="3363881188">
+    <data-source source="LOCAL" name="Rails musgroups: development" uuid="41e4065d-b66c-453e-8f99-dc0d0a81d368">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1/musgroups_development</jdbc-url>
+      <user-name>vizvamitra</user-name>
+      <user-password>df9adf9adf9adf9cdf9adf9adf98df93</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails musgroups: production" uuid="c70ec637-d84d-4f85-887d-a97ad7ca731e">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1/musgroups_production</jdbc-url>
+      <user-name>vizvamitra</user-name>
+      <user-password>df9adf9adf9adf9cdf9adf9adf98df93</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+

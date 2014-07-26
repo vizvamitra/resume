@@ -1,0 +1,25 @@
+<tr>
+  <td rowspan='<%= sz.grouped_items.size+1 %>'><%= link_to sz.ovks_num, sz %></td>
+  <td rowspan='<%= sz.grouped_items.size+1 %>'><%= link_to '', sz.scan, class: 'icon_24 scan_24' if sz.scan %></td>
+  <td rowspan='<%= sz.grouped_items.size+1 %>'><%= date(sz.date) %></td>
+  <td rowspan='<%= sz.grouped_items.size+1 %>'><%= sz.sz_type.name %></td>
+  <td rowspan='<%= sz.grouped_items.size+1 %>'><%= first_name(sz.employee.fio) %></td>
+  <td rowspan='<%= sz.grouped_items.size+1 %>'><%= sz.employee.department.title %></td>
+
+   <% if sz.grouped_items.empty? %>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><%= first_name(sz.user.fio) %></td>
+    <td><%= sz.note %></td>
+    <td><%= link_to '', edit_sz_path(sz), class: 'icon_24 edit_24' %></td>
+    <td><%= link_to '', sz_path(sz), method: :delete, data:{confirm: "Вы уверены?"}, class: 'icon_24 edit_24' %></td>
+  <% end %>
+</tr>
+
+<% sz.grouped_items.each do |item| %>
+  <%= render item, owner: sz %>
+<% end %>

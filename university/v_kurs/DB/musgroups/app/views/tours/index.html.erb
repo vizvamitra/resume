@@ -1,0 +1,39 @@
+<div id="notice"><%= notice %></div>
+<h1>Концертные туры <%= @group['title'] %></h1>
+
+<div class='controls'>
+  <%= link_to 'Добавить', new_group_tour_path(params['group_id'].to_i) %> | 
+  <%= link_to 'Назад', group_path(@group['id']) %>
+</div>
+
+<br/>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= link_to 'Название', "?order_by=title&order=#{@order}" %></th>
+      <th><%= link_to 'Начало', "?order_by=begin_date&order=#{@order}" %></th>
+      <th><%= link_to 'Окончание', "?order_by=end_date&order=#{@order}" %></th>
+      <th colspan='2' class='controls'></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tours.each do |tour| %>
+      <tr>
+        <td><%= link_to tour['title'], group_tour_path(@group['id'],tour['id']) %></td>
+        <td><%= tour.begin_date.to_date.strftime('%d.%m.%Y') %></td>
+        <td><%= tour.end_date.to_date.strftime('%d.%m.%Y') %></td>
+        <td class='controls'><%= link_to 'Изменить', edit_group_tour_path(params['group_id'],tour.id) %></td>
+        <td class='controls'><%= link_to 'Удалить', tour_path(tour.id), method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br/>
+
+<div class='controls'>
+  <%= link_to 'Добавить', new_group_tour_path(params['group_id'].to_i) %> | 
+  <%= link_to 'Назад', group_path(@group['id']) %>
+</div>

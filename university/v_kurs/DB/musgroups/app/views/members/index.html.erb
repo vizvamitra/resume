@@ -1,0 +1,39 @@
+<div id="notice"><%= notice %></div>
+<h1><%="Состав #{@group['title']}"%></h1>
+
+<div class='controls'>
+  <%= link_to 'Добавить', new_group_member_path(@group['id']) %> | 
+  <%= link_to 'Назад', group_path(@group['id']) %>
+</div>
+
+<br/>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= link_to 'Участник', "?order_by=name&order=#{@order}" %></th>
+      <th><%= link_to 'Амплуа', "?order_by=role&order=#{@order}" %></th>
+      <th><%= link_to 'Возраст', "?order_by=age&order=#{@order}" %></th>
+      <th colspan='2' class='controls'></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @members.each do |member| %>
+      <tr>
+        <td><%= member['name'] %></td>
+        <td><%= member['role'] %></td>
+        <td><%= Time.now.year - member['birth_date'].to_date.year %></td>
+        <td class='controls'><%= link_to 'Изменить', edit_group_member_path(member['group_id'], member['id']) %></td>
+        <td class='controls'><%= link_to 'Удалить', member_path(member['id']), method: :delete, data: {confirm: 'Вы уверены?'} %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br/>
+
+<div class='controls'>
+  <%= link_to 'Добавить', new_group_member_path(@group['id']) %> | 
+  <%= link_to 'Назад', group_path(@group['id']) %>
+</div>
