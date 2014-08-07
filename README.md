@@ -9,7 +9,7 @@
 
 1. [Личные работы](home_projects) (ruby, RoR, javascript, java+android)
 2. Универ
-    - [V курс (2014 г.)](university/v_kurs): Две БД (RoR), Блог (RoR, mongoDB), 2d (ruby) и 3d (C + OpenGL) графика. 
+    - [V курс (2014 г.)](university/v_kurs): БД документооборота отдела (RoR), Блог (RoR, mongoDB), 2d (ruby) и 3d (C + OpenGL) графика.
     - [IV курс](university/iv_kurs): межпроцессорное взаимодействие в linux (C), распределённые вычисления (C), трекер задач (php)
     - [II курс](university/ii_kurs): реализация алгоритма поиска подстроки Кнута-Морриса-Пратта (C + Assembler)
     - [I курс (2010 г.)](university/i_kurs): консольная бд, хранящая информацию о песнях (C)

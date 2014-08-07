@@ -1,5 +1,5 @@
-set :user, 'vizvamitra'
-set :domain, 'horrible'
+set :user, '********'
+set :domain, '********'
 set :application, "musgroups"
 
 # adjust if you are using RVM, remove if you are not
@@ -11,7 +11,7 @@ require 'rvm/capistrano'
 require 'bundler/capistrano'
 
 # file paths
-set :repository,  "#{user}@Raumarepola:git/#{application}.git" 
+set :repository,  "#{user}@mypc:git/#{application}.git" 
 #set :deploy_to, "/home/#{user}/deploy/#{application}" 
 set :deploy_to, "/home/#{user}/www/#{application}"
 
