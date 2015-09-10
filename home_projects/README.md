@@ -11,7 +11,7 @@ JavaScript, HTML, WebGL, конвертер obj-файлов на Ruby
 
 [3]: https://www.coursera.org/course/webgl
 [4]: https://github.com/vizvamitra/webgl_study
-[5]: vizvamitra.github.io/webgl_study
+[5]: http://vizvamitra.github.io/webgl_study
 
 #### блог
 ###### март-май 2015
