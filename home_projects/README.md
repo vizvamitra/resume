@@ -1,54 +1,26 @@
 ##Личные проекты
-В порядке от последних к ранним:
 
-####canvas+javascript
-Пробую написать простенькую 2d-игру. Только-только начал, от игровой логики ещё ничего нет, графика ещё не рисовна, есть только загрузка карты, движок обработки ввода, загрузка спрайтшитов, тестовые данные и разные мелочи.  Привожу чисто как пример работы с javascript.
+#### webgl
+###### август-сентябрь 2015
 
-P.S.: Физический движок сторонний, **Box2D**
+Набор демонстрационных примеров для курса [Interactive Computer Graphics with WebGL][3]
 
-Исходники: [github](canvas%2Bjavascript)
+JavaScript, HTML, WebGL, конвертер obj-файлов на Ruby
 
-Ссылка: [canvas+javascript](http://vizvamitra.ddns.net:3001/)
+[исходники][4] | [ссылка][5]
 
-####vk photos
-Сайт на sinatra для скачивания "фотографий со мной" из вконтакте одним архивом.
+[3]: https://www.coursera.org/course/webgl
+[4]: https://github.com/vizvamitra/webgl_study
+[5]: vizvamitra.github.io/webgl_study
 
-Исходники: [Github](https://github.com/Vizvamitra/vk_photos)
+#### блог
+###### март-май 2015
 
-Ссылка: [vk photos](http://vizvamitra.ddns.net:4000/)
+Небольшой блог на Rails и MongoDB.
 
-####list tool
-Консольный редактор списков (например списка дел) на ruby, по личным соображениям упакованный в отдельный гем. Обращать внимание следует на идущую в комплекте с гемом консольную утилиту **clt**, а не на сам гем.
-Заодно это мой первый опыт rspec и TDD.
+Bootstrap, редактор постов на React.js, Open Graph, микроразметка, генерация sitemap по расписанию
 
-Исходники: [Github](https://github.com/Vizvamitra/list-tool)
+[исходники][1] | [ссылка][2]
 
-####site_shoter
-скрипт-обёртка для **wkhtmltoimage**, которая делает скриншоты сайтов.
-
-Исходники: [Github](https://github.com/Vizvamitra/site_shoter)
-
-####youtube subtitler:
-Программа на ruby, принимает список ссылок на видео с youtube, скачивает субтитры к ним в виде простого текста.
-
-Исходники: [Github](https://github.com/Vizvamitra/youtube_subtitler)
-
-####KML-gen
-Скрипт на ruby, дополнение для **LocLog**'а. Принимает его выходной файл с координатами и генерирует из него kml-файл, пригодный для запихивания в гугл-карты (для рисования маршрута).
-
-Исходники: [github](KMLgen)
-
-####LocLog
-Android-приложение, умеет записывать GPS-координаты аппарата в простой csv файл и посылать его по почте.
-
-Исходники: [github](LocLog)
-
-apk: [скачать](https://github.com/Vizvamitra/resume/raw/master/home_projects/LocLog/bin/LocLog.apk)
-
-####todolist:
-Первый проект на rails, не считая того, что описан в книге "Agile Web Development with Rails 4" (Sam Ruby, Dave Thomas).
-Сейчас переписываю по-нормальному, заодно практикуюсь в использовании cucumber и jasmine. На гитхабе старая версия, она же по ссылке.
-
-Исходники: [Github](https://github.com/Vizvamitra/todolist)
-
-Ссылка: [todolist](http://vizvamitra.ddns.net/)
+[1]: https://github.com/vizvamitra/blog
+[2]: http://vizvamitra.ru

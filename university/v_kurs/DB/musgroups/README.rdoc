@@ -1,5 +1,0 @@
-== README
-
-This site was made for university's 'Database' course It's quite simple, quiet slow ant quiet ugly
-
-You can contact me via email: vizvamitra@gmail.com
