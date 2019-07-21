@@ -8,11 +8,15 @@ Hi! I'm Dmitry, a web developer from St. Petersburg, Russia with 4 years of expe
 
     Most of my ruby code rests in private codebases, so there's not much to show here, yet I consider the folowing examples representative
 
-    - My pull requests to uploadcare-ruby, for example [this][Secure Auth] and [this][ResourceList]
+    - My pull requests to `saintpruby_bot`, a telegram bot for our local community's ruby conference, for example [this][Keyboard dsl], [this][Talk command] and [this][Fallbacks & cleanup]
+    - My pull requests to `uploadcare-ruby` gem, for example [this][Secure Auth] and [this][ResourceList]
     - Useless yet interesting [patme][patme] gem (with 75★) that implements elixir-style pattern matching (I've written it some time ago on a dare)
     - [Test task][SPBTV test task] for my previous employer (SPB TV AG)
     - [telegram bot][telegram bot] that I've written for personal purposes
 
+[Keyboard dsl]: https://github.com/saintprug/saintpruby_bot/pull/23
+[Talk command]: https://github.com/saintprug/saintpruby_bot/pull/24
+[Fallbacks & cleanup]: https://github.com/saintprug/saintpruby_bot/pull/28
 [Secure Auth]: https://github.com/uploadcare/uploadcare-ruby/pull/24
 [ResourceList]: https://github.com/uploadcare/uploadcare-ruby/pull/31
 [patme]: https://github.com/vizvamitra/patme
