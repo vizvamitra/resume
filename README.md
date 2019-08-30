@@ -1,12 +1,12 @@
 # Resume
 
-Hi! I'm Dmitry, a web developer from St. Petersburg, Russia with 4 years of experience in the field of professional web development.
+Hi! I'm Dmitry, a web developer from St. Petersburg, Russia with 5 years of experience in the field of professional web development. During the career I've successfully tried myself in various kinds of tasks including development from scratch, helping pre-existing complex projects to gradually evolve, working with large legacy code bases, careful refactorings, writing automated tests, infrastructure setup, etc. As a pragmatic person I optimize my work for the maximization of it's business value, and, being a swift learner, I'm able to solve novel problems quickly and efficiently.
 
 ## I code
 
 - ### Ruby
 
-    Most of my ruby code rests in private codebases, so there's not much to show here, yet I consider the folowing examples representative
+    Most of my ruby code rests in private codebases, so there's not much to show here, yet I consider the folowing examples representative:
 
     - My pull requests to `saintpruby_bot`, a telegram bot for our local community's ruby conference, for example [this][Keyboard dsl], [this][Talk command] and [this][Fallbacks & cleanup]
     - My pull requests to `uploadcare-ruby` gem, for example [this][Secure Auth] and [this][ResourceList]
@@ -50,21 +50,6 @@ Hi! I'm Dmitry, a web developer from St. Petersburg, Russia with 4 years of expe
 
 ## I work
 
-### Freelance
-
-- #### Online store [istetica.ru][istetica]
-
-    I was working here as a fullstack developer. In 80 working hours spanned into two months I've lead this project from a prototype stage to a fully functional online store.
-
-- #### [uploadcare-ruby][uploadcare-ruby] && [uploadcare-rails][uploadcare-rails] gems
-
-    Uploadcare hired me to maintain their ruby gems. I've lead uploadcare-ruby gem [from v1.0.5 to v2.1.2][uploadcare-ruby diff]
-
-[istetica]: https://istetica.ru
-[uploadcare-ruby]: https://github.com/uploadcare/uploadcare-ruby
-[uploadcare-rails]: https://github.com/uploadcare/uploadcare-rails
-[uploadcare-ruby diff]: https://github.com/uploadcare/uploadcare-ruby/compare/v1.0.5...v2.1.2
-
 ### Career
 
 - #### Backend dev at [<img src="./images/spbtv.svg" height="26" style="margin-bottom: -4px">][spbtv], 2017.03 - 2018.10 (1 year 8 months)
@@ -98,3 +83,18 @@ Hi! I'm Dmitry, a web developer from St. Petersburg, Russia with 4 years of expe
 [spbtv]: https://beltandroad.tv/
 [izi.travel]: https://izi.travel/en
 [1tvch]: http://1tvch.ru
+
+### Freelance
+
+- #### Online store [istetica.ru][istetica]
+
+    I was working here as a fullstack developer. In 80 working hours spanned into two months I've lead this project from a prototype stage to a fully functional online store.
+
+- #### [uploadcare-ruby][uploadcare-ruby] && [uploadcare-rails][uploadcare-rails] gems
+
+    Uploadcare hired me to maintain their ruby gems. I've lead uploadcare-ruby gem [from v1.0.5 to v2.1.2][uploadcare-ruby diff]
+
+[istetica]: https://istetica.ru
+[uploadcare-ruby]: https://github.com/uploadcare/uploadcare-ruby
+[uploadcare-rails]: https://github.com/uploadcare/uploadcare-rails
+[uploadcare-ruby diff]: https://github.com/uploadcare/uploadcare-ruby/compare/v1.0.5...v2.1.2
